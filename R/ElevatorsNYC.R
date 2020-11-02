@@ -7,7 +7,7 @@
 #' @aliases ElevatorsNYC ElevatorsNYC-package
 NULL
 
-#' "Elevators NYC"
+#' "ElevatorsNYC"
 #'
 #' A data set containing all registered elevator
 #' devices in New York City as of November 2015,
