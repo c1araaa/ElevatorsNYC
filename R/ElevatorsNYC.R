@@ -1,7 +1,7 @@
 #' Elevators for Elevators NYC
 #'
 #' This package contains specifications for all elevator devices
-#' in New York City, provided by the Department of Buildings in 2015
+#' in New York City.
 #' @docType package
 #' @name ElevatorsNYC
 #' @aliases ElevatorsNYC ElevatorsNYC-package
@@ -11,7 +11,7 @@ NULL
 #'
 #' A data set containing all registered elevator
 #' devices in New York City as of November 2015,
-#' provided by the Department of Buildings
+#' provided by the Department of Buildings.
 #'
 #' @source \url{https://github.com/datanews/elevators}
 #' @format A dataframe with 76,088 elements
