@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # ElevatorsNYC
 
 <!-- badges: start -->
+![R-CMD-check](https://github.com/c1araaa/ElevatorsNYC/workflows/R-CMD-check/badge.svg)
 <!-- badges: end -->
 
 The goal of ElevatorsNYC is to provide information about all registered elevator devices in New York City. As of November 2015, there are 76,088 elevators registered in New York City. For more information about a specific individual elevator device, go to the NYC Department of Buildings Building Information Search and enter a device number in the Elevator Device Search.

@@ -5,6 +5,7 @@
 
 <!-- badges: start -->
 
+![R-CMD-check](https://github.com/c1araaa/ElevatorsNYC/workflows/R-CMD-check/badge.svg)
 <!-- badges: end -->
 
 The goal of ElevatorsNYC is to provide information about all registered
