@@ -45,10 +45,10 @@ ElevatorsNYC
 }
 \description{
 This package contains specifications for all elevator devices
-in New York City, provided by the Department of Buildings in 2015
+in New York City.
 
 A data set containing all registered elevator
 devices in New York City as of November 2015,
-provided by the Department of Buildings
+provided by the Department of Buildings.
 }
 \keyword{datasets}
