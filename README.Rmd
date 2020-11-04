@@ -1,10 +1,17 @@
 ---
 output: github_document
+always_allow_html: true
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
+```{r, setup, include=FALSE}
+library(mosaic)   # Load additional packages here 
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -35,3 +42,56 @@ And the development version from [GitHub](https://github.com/) with:
 # install.packages("devtools")
 devtools::install_github("c1araaa/ElevatorsNYC")
 ```
+
+## About the data 
+
+The original data was released to the public in November 2015 by the New York State Department of Buildings after FOIL request was submitted in September 2015. The data was made available by WNYC Data News Team.
+
+```{r showdata}
+data(ElevatorsNYC)
+head(ElevatorsNYC)
+```
+
+## Example
+
+```{r, warning=FALSE, message=FALSE, eval=FALSE}
+tally(ElevatorsNYC$device_type)
+```
+
+```{r, message = FALSE, warning = FALSE, echo=FALSE}
+# elevator devices in New York City by device type
+table1 <- tally(ElevatorsNYC$device_type)
+table1 <- as.data.frame(table1) %>% arrange(desc(Freq))
+colnames(table1) <- c("Device Type", "Count")
+kable(table1) %>%
+  kable_styling(latex_options = c("striped", "HOLD_position")) 
+```
+
+As of 2015, there was about a total of 76,000 elevator devices in New York City. 
+
+```{r, warning=FALSE, message=FALSE, eval=FALSE}
+tally(ElevatorsNYC$borough)
+```
+
+```{r, message = FALSE, warning = FALSE, echo=FALSE}
+# elevator devices in New York City by borough
+table2 <- tally(ElevatorsNYC$borough)
+table2 <- as.data.frame(table2) %>% arrange(desc(Freq))
+colnames(table2) <- c("Borough", "Count")
+kable(table2) %>%
+  kable_styling(latex_options = c("striped", "HOLD_position")) 
+```
+
+As of 2015, out of the five boroughs in NYC, Manhattan has the greatest number of elevator devices.  
+
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
+elevators_nonoutliers <- ElevatorsNYC %>% 
+  filter(floor_to<200)
+ggplot(elevators_nonoutliers, aes(x = floor_to)) +
+  geom_histogram(binwidth=1) + 
+  labs(x = "Highest floor") + 
+  annotate("text", x = 20, y = 11900, label = "Sixth Floor", color="blue") +
+  annotate("text", x = 27, y = 2800, label = "Twelfth Floor", color="purple")
+```
+
+Looking at distribution of NYC elevators and the floors at which they max out at. It is interesting to see a clear mode at 6 floors. A [New York Times article](https://www.nytimes.com/2007/06/03/nyregion/thecity/03wate.html) explains that buildings over six stories use a pump to fill tanks. Another [NYT article](https://www.nytimes.com/2008/05/11/realestate/11cov.html) reports that since 1968, NYC has required builders to install elevators in all new residential buildings that have five or more stories. So, it is not surprising that an overwhelming number are elevators are built for buildings that are six stories high - hitting the perfect sweet spot of not having a water pump while having a building tall enough to install an elevator.
