@@ -29,6 +29,7 @@ ElevatorsNYC <-
     floor_to = as.numeric(floor_to),
     floor_diff = floor_to-floor_from
   ) %>%
+  filter(floor_to<105)%>%
   dplyr::na_if("=A<c2><a2>")
 ElevatorsNYC$safety_type <- iconv(ElevatorsNYC$safety_type, "latin1", "ASCII", "")
 usethis::use_data(ElevatorsNYC)
