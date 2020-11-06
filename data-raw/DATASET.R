@@ -30,6 +30,9 @@ ElevatorsNYC <-
     floor_diff = floor_to-floor_from
   ) %>%
   filter(floor_to<105)%>%
-  dplyr::na_if("=A<c2><a2>")
+  dplyr::na_if("=A<c2><a2>") %>%
+  transform(approval_date = as.Date(as.character(approval_date), "%Y%m%d"),
+            status_date = as.Date(as.character(status_date), "%Y%m%d"),
+            lastdob_insp_date = as.Date(as.character(lastdob_insp_date), "%Y%m%d"))
 ElevatorsNYC$safety_type <- iconv(ElevatorsNYC$safety_type, "latin1", "ASCII", "")
 usethis::use_data(ElevatorsNYC)
