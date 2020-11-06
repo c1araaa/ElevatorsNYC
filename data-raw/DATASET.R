@@ -35,4 +35,4 @@ ElevatorsNYC <-
             status_date = as.Date(as.character(status_date), "%Y%m%d"),
             lastdob_insp_date = as.Date(as.character(lastdob_insp_date), "%Y%m%d"))
 ElevatorsNYC$safety_type <- iconv(ElevatorsNYC$safety_type, "latin1", "ASCII", "")
-usethis::use_data(ElevatorsNYC)
+usethis::use_data(ElevatorsNYC, overwrite = TRUE)

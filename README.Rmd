@@ -26,7 +26,7 @@ knitr::opts_chunk$set(
 ![R-CMD-check](https://github.com/c1araaa/ElevatorsNYC/workflows/R-CMD-check/badge.svg)
 <!-- badges: end -->
 
-The goal of ElevatorsNYC is to provide information about all registered elevator devices in New York City. As of November 2015, there are 76,088 elevators registered in New York City. For more information about a specific individual elevator device, go to the NYC Department of Buildings Building Information Search and enter a device number in the Elevator Device Search.
+The goal of ElevatorsNYC is to provide information about all registered elevator devices in New York City. As of November 2015, there are 76,088 elevators registered in New York City. For more information about a specific individual elevator device, go to the [NYC Department of Buildings Building Information Search](http://a810-bisweb.nyc.gov/bisweb/bispi00.jsp) and enter a device number in the Elevator Device Search.
 
 ## Installation
 
@@ -47,7 +47,7 @@ devtools::install_github("c1araaa/ElevatorsNYC")
 
 The original data was released to the public in November 2015 by the New York State Department of Buildings after FOIL request was submitted in September 2015. The data was made available by WNYC Data News Team.
 
-```{r showdata}
+```{r showthedata}
 data(ElevatorsNYC)
 head(ElevatorsNYC)
 ```
@@ -95,7 +95,7 @@ ggplot(elevators_nonoutliers, aes(x = floor_to)) +
     geom = "curve", x = 15, y = 12000, xend = 6, yend = 12500, color="blue",
     curvature = .3, arrow = arrow(length = unit(2, "mm"))
   ) +
-  annotate("text", x = 28, y = 4500, label = "Twelfth Floor", color="purple") + 
+  annotate("text", x = 35, y = 4500, label = "Twelfth Floor", color="purple") + 
   annotate(
     geom = "curve", x = 20, y = 4500, xend = 12, yend = 3500, color="purple",
     curvature = .3, arrow = arrow(length = unit(2, "mm"))
