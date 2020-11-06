@@ -29,7 +29,6 @@ ElevatorsNYC <-
     floor_to = as.numeric(floor_to),
     floor_diff = floor_to-floor_from
   ) %>%
-  filter(floor_to<105)%>%
   dplyr::na_if("=A<c2><a2>") %>%
   transform(approval_date = as.Date(as.character(approval_date), "%Y%m%d"),
             status_date = as.Date(as.character(status_date), "%Y%m%d"),

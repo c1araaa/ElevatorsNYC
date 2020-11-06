@@ -49,7 +49,6 @@ The original data was released to the public in November 2015 by the New York St
 
 ```{r showthedata}
 data(ElevatorsNYC)
-head(ElevatorsNYC)
 ```
 
 ## Example
@@ -106,7 +105,7 @@ ggplot(elevators_nonoutliers, aes(x = floor_to)) +
     geom = "curve", x = 95, y = 1500, xend = 100, yend = 400, color="orange",
     curvature = .3, arrow = arrow(length = unit(2, "mm"))
   ) +
-  annotate(geom = "point", x = 102, y = 1, colour = "orange", size = 3)
+  annotate(geom = "point", x = 102, y = 1, colour = "orange", size = 3) +
   xlim(0, 105)
 ```
 
