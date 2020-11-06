@@ -90,8 +90,24 @@ elevators_nonoutliers <- ElevatorsNYC %>%
 ggplot(elevators_nonoutliers, aes(x = floor_to)) +
   geom_histogram(binwidth=1) + 
   labs(x = "Highest floor") + 
-  annotate("text", x = 20, y = 11900, label = "Sixth Floor", color="blue") +
-  annotate("text", x = 27, y = 2800, label = "Twelfth Floor", color="purple")
+  annotate("text", x = 20, y = 11500, label = "Sixth Floor", color="blue") +
+  annotate(
+    geom = "curve", x = 15, y = 12000, xend = 6, yend = 12500, color="blue",
+    curvature = .3, arrow = arrow(length = unit(2, "mm"))
+  ) +
+  annotate("text", x = 28, y = 4500, label = "Twelfth Floor", color="purple") + 
+  annotate(
+    geom = "curve", x = 20, y = 4500, xend = 12, yend = 3500, color="purple",
+    curvature = .3, arrow = arrow(length = unit(2, "mm"))
+  ) +
+  annotate("text", x = 95, y = 2500, label = "Empire State Building \n (102nd floor)", 
+           color="orange") +
+  annotate(
+    geom = "curve", x = 95, y = 1500, xend = 100, yend = 400, color="orange",
+    curvature = .3, arrow = arrow(length = unit(2, "mm"))
+  ) +
+  annotate(geom = "point", x = 102, y = 1, colour = "orange", size = 3)
+  xlim(0, 105)
 ```
 
 Looking at distribution of NYC elevators and the floors at which they max out at. It is interesting to see a clear mode at 6 floors. A [New York Times article](https://www.nytimes.com/2007/06/03/nyregion/thecity/03wate.html) explains that buildings over six stories use a pump to fill tanks. Another [NYT article](https://www.nytimes.com/2008/05/11/realestate/11cov.html) reports that since 1968, NYC has required builders to install elevators in all new residential buildings that have five or more stories. So, it is not surprising that an overwhelming number are elevators are built for buildings that are six stories high - hitting the perfect sweet spot of not having a water pump while having a building tall enough to install an elevator.

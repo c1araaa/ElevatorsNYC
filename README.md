@@ -11,9 +11,10 @@
 The goal of ElevatorsNYC is to provide information about all registered
 elevator devices in New York City. As of November 2015, there are 76,088
 elevators registered in New York City. For more information about a
-specific individual elevator device, go to the NYC Department of
-Buildings Building Information Search and enter a device number in the
-Elevator Device Search.
+specific individual elevator device, go to the [NYC Department of
+Buildings Building Information
+Search](http://a810-bisweb.nyc.gov/bisweb/bispi00.jsp) and enter a
+device number in the Elevator Device Search.
 
 ## Installation
 
@@ -371,6 +372,10 @@ As of 2015, out of the five boroughs in NYC, Manhattan has the greatest
 number of elevator devices.
 
 <img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+
+    #> <ScaleContinuousPosition>
+    #>  Range:  
+    #>  Limits:    0 --  105
 
 Looking at distribution of NYC elevators and the floors at which they
 max out at. It is interesting to see a clear mode at 6 floors. A [New
